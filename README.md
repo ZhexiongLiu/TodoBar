@@ -1,5 +1,5 @@
 <p align="center">
-	<img width="200" height="200" margin-right="100%" src="https://github.com/ZhexiongLiu/TodoBar/blob/master/code/To-do%20Bar/Assets.xcassets/AppIcon.appiconset/1024.png?raw=true">
+	<img width="200" height="200" margin-right="100%" src="https://github.com/ZhexiongLiu/TodoBar/blob/master/To-do%20Bar/Assets.xcassets/AppIcon.appiconset/1024.png?raw=true">
 </p>
 <p align="center">
 <a href="https://github.com/ZhexiongLiu/TodoBar/blob/master/TodoBar/releases/latest">
