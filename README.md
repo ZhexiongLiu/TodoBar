@@ -2,13 +2,13 @@
 	<img width="200" height="200" margin-right="100%" src="https://github.com/ZhexiongLiu/TodoBar/blob/master/To-do%20Bar/Assets.xcassets/AppIcon.appiconset/1024.png?raw=true">
 </p>
 <p align="center">
-<a href="https://github.com/ZhexiongLiu/TodoBar/blob/master/TodoBar/releases/latest">
+<a href="https://github.com/ZhexiongLiu/TodoBar/releases/latest">
  		<img src="https://img.shields.io/badge/download-latest-brightgreen.svg" alt="download">
-	<a href="https://img.shields.io/badge/platform-macOS-lightgrey.svg">
+	<a href="https://www.apple.com/macos/">
  		<img src="https://img.shields.io/badge/platform-macOS-lightgrey.svg" alt="platform">
 	</a>
-	<a href="https://img.shields.io/badge/requirements-macOS High Sierra+-ff69b4.svg">
- 		<img src="https://img.shields.io/badge/requirements-macOS High Sierra+-ff69b4.svg" alt="systemrequirements">
+	<a href="https://img.shields.io/badge/requirements-macOS High Catalina+-ff69b4.svg">
+ 		<img src="https://img.shields.io/badge/requirements-macOS High Catalina+-ff69b4.svg" alt="systemrequirements">
 	</a>
 </p>
 
