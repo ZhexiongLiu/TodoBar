@@ -331,63 +331,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         remindersMenu(statusBarMenu: statusBarMenu)
         
-        
-        //        let statusBarMenu = NSMenu(title: "TodoMenuBar ")
-        //        statusBarMenu.minimumWidth = 200
-        //        statusItem.menu = statusBarMenu
-        //
-        //        statusBarMenu.addItem(
-        //            withTitle: "Todo List on " + Date().toString(dateFormat: "EEE MMM d"),
-        //            action: #selector(AppDelegate.RefreshAPP),
-        //            keyEquivalent: "")
-        //
-        //        if calendarGrant && !remindersGrant {
-        //
-        //            referenceMenu(statusBarMenu: statusBarMenu)
-        //
-        //            statusBarMenu.addItem(NSMenuItem.separator())
-        //
-        //            calendarMenu(statusBarMenu: statusBarMenu)
-        //        }
-        //
-        //
-        //        if remindersGrant && !calendarGrant{
-        //
-        //            let statusBarMenu = NSMenu(title: "TodoMenuBar ")
-        //            statusBarMenu.minimumWidth = 200
-        //            statusItem.menu = statusBarMenu
-        //
-        //            statusBarMenu.addItem(
-        //                withTitle: "Todo List on " + Date().toString(dateFormat: "EEE MMM d"),
-        //                action: #selector(AppDelegate.RefreshAPP),
-        //                keyEquivalent: "")
-        //
-        //            statusBarMenu.addItem(NSMenuItem.separator())
-        //
-        //            remindersMenu(statusBarMenu: statusBarMenu)
-        //
-        //        }
-        //
-        //        if calendarGrant && remindersGrant{
-        //
-        //            let statusBarMenu = NSMenu(title: "TodoMenuBar ")
-        //            statusBarMenu.minimumWidth = 200
-        //            statusItem.menu = statusBarMenu
-        //
-        //            statusBarMenu.addItem(
-        //                withTitle: "Todo List on " + Date().toString(dateFormat: "EEE MMM d"),
-        //                action: #selector(AppDelegate.RefreshAPP),
-        //                keyEquivalent: "")
-        //
-        //            statusBarMenu.addItem(NSMenuItem.separator())
-        //
-        //            remindersMenu(statusBarMenu: statusBarMenu)
-        //
-        ////            calendarMenu(statusBarMenu: statusBarMenu)
-        //
-        //        }
-        
-        
     }
     
     
