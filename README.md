@@ -35,7 +35,7 @@ To-do Bar shows [MacOS](https://www.apple.com/macos/) [Reminders](https://suppor
 
 <p align="center">
 	<img src="img/tutorial.gif">
-	<video src="img/tutorial.mov" type="video/mp4>
+	<video src="img/tutorial.mov" type="video/mp4">
 </p>
 
 
