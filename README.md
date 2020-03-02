@@ -16,8 +16,8 @@
 To-do Bar shows [MacOS](https://www.apple.com/macos/) [Reminders](https://support.apple.com/guide/reminders/)/[Calendar](https://support.apple.com/guide/calendar/) tasks in your menu bar.
 
 <p align="center">
-	<img width="400" src="img/screen1.png">
-	<img width="400" src="img/screen2.png">
+	<img width="430" src="img/screen1.png">
+	<img width="430" src="img/screen2.png">
 </p>
 
 
@@ -34,7 +34,7 @@ To-do Bar shows [MacOS](https://www.apple.com/macos/) [Reminders](https://suppor
 * Calendar items would be hidden when time passed.
 
 <p align="center">
-	<img src="img/tutorial.gif">
+	<img width="600" src="img/tutorial.gif">
 </p>
 
 
