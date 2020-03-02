@@ -25,6 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var reminderCount = 0
     
     let defaultWidth = 200
+    let maxStringLength = 30
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
@@ -170,8 +171,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 
                 Datestring = startDateString + "-" + endDateString
                 EventSring = event.title as String
-                if EventSring.count >= 25 {
-                    EventSring = String(EventSring.prefix(25)) + "..."
+                if EventSring.count >= self.maxStringLength {
+                    EventSring = String(EventSring.prefix(self.maxStringLength)) + "..."
                 }
                 
                 statusBarMenu.addItem(NSMenuItem.separator())
@@ -193,8 +194,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 Datestring = "Now" + "-" + endDateString
                 
                 EventSring = event.title as String
-                if EventSring.count >= 25 {
-                    EventSring = String(EventSring.prefix(25)) + "..."
+                if EventSring.count >= self.maxStringLength {
+                    EventSring = String(EventSring.prefix(self.maxStringLength)) + "..."
                 }
                 
                 statusBarMenu.addItem(NSMenuItem.separator())
@@ -216,8 +217,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             
             Datestring = "All Day"
             EventSring = event.title as String
-            if EventSring.count >= 25 {
-                EventSring = String(EventSring.prefix(25)) + "..."
+            if EventSring.count >= self.maxStringLength {
+                EventSring = String(EventSring.prefix(self.maxStringLength)) + "..."
             }
             
             statusBarMenu.addItem(NSMenuItem.separator())
@@ -265,8 +266,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                         self.reminderCount = self.reminderCount + 1
                         //                        print(self.reminderCount)
                         var ReminderString = reminder!.title as String
-                        if ReminderString.count >= 20{
-                            ReminderString = String(ReminderString.prefix(20)) + "..."
+                        if ReminderString.count >= self.maxStringLength{
+                            ReminderString = String(ReminderString.prefix(self.maxStringLength)) + "..."
                         }
                         statusBarMenu.addItem(
                             withTitle: ReminderString,
@@ -350,13 +351,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     
                     if reminder?.dueDateComponents?.date?.toLocalTime() ?? Date().toLocalTime() <= Date.tomorrow.toLocalTime() {
                         let target_item = reminder?.title!
-                        if item == target_item{
+                        print(item.prefix(self.maxStringLength), target_item?.prefix(self.maxStringLength))
+                        if item.prefix(self.maxStringLength) == target_item?.prefix(self.maxStringLength){
                             reminder?.isCompleted = true
                             do {
 //                                self.reminderCount = self.reminderCount - 1
                                 try self.eventStore.save(reminder!, commit: true)
                                 print("completed reminder successed")
-//                                self.fetchItems()
+                                self.fetchItems()
                             }catch{
                                 print("error \(error)")
                             }
