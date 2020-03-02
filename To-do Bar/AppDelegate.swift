@@ -6,7 +6,6 @@
 //  Copyright © 2020 Zhexiong Liu. All rights reserved.
 //
 
-
 import Cocoa
 import SwiftUI
 import EventKit
