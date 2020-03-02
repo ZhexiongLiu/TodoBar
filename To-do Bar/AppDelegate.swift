@@ -83,7 +83,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         if calendarGrant || remindersGrant{
             
-            let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fetchItems), userInfo: nil, repeats: true)
+            let timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(fetchItems), userInfo: nil, repeats: true)
             
             RunLoop.main.add(timer, forMode: RunLoop.Mode.default)
         }
@@ -238,6 +238,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @objc func remindersMenu(statusBarMenu: NSMenu) {
         
+        self.reminderCount = 0
+        
         statusBarMenu.addItem(NSMenuItem.separator())
         if remindersGrant{
             statusBarMenu.addItem(
@@ -316,7 +318,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @objc func fetchItems(){
         
-        self.reminderCount = 0
         
         let statusBarMenu = NSMenu(title: "TodoMenuBar ")
         statusBarMenu.minimumWidth = 200
@@ -352,9 +353,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                         if item == target_item{
                             reminder?.isCompleted = true
                             do {
+//                                self.reminderCount = self.reminderCount - 1
                                 try self.eventStore.save(reminder!, commit: true)
                                 print("completed reminder successed")
-                                self.fetchItems()
+//                                self.fetchItems()
                             }catch{
                                 print("error \(error)")
                             }
