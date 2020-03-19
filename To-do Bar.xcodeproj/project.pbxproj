@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		52C2B32D240C46BB006E217F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C2B32C240C46BB006E217F /* AppDelegate.swift */; };
-		52C2B32F240C46BB006E217F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C2B32E240C46BB006E217F /* ContentView.swift */; };
 		52C2B331240C46BC006E217F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C2B330240C46BC006E217F /* Assets.xcassets */; };
 		52C2B334240C46BC006E217F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C2B333240C46BC006E217F /* Preview Assets.xcassets */; };
 		52C2B337240C46BC006E217F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C2B335240C46BC006E217F /* Main.storyboard */; };
@@ -36,7 +35,6 @@
 /* Begin PBXFileReference section */
 		52C2B329240C46BB006E217F /* To-do Bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "To-do Bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C2B32C240C46BB006E217F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		52C2B32E240C46BB006E217F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		52C2B330240C46BC006E217F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52C2B333240C46BC006E217F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		52C2B336240C46BC006E217F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				52C2B32C240C46BB006E217F /* AppDelegate.swift */,
-				52C2B32E240C46BB006E217F /* ContentView.swift */,
 				52C2B330240C46BC006E217F /* Assets.xcassets */,
 				52C2B335240C46BC006E217F /* Main.storyboard */,
 				52C2B338240C46BC006E217F /* Info.plist */,
@@ -266,7 +263,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52C2B32F240C46BB006E217F /* ContentView.swift in Sources */,
 				52C2B32D240C46BB006E217F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
