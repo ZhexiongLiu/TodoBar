@@ -13,7 +13,7 @@
 </p>
 
 ## To-do Bar
-* To-do Bar empowers [MacOS](https://www.apple.com/macos/) [Reminders](https://support.apple.com/guide/reminders/)/[Calendar](https://support.apple.com/guide/calendar/), allowing todo tasks available in menu bar.
+To-do Bar empowers [MacOS](https://www.apple.com/macos/) [Reminders](https://support.apple.com/guide/reminders/)/[Calendar](https://support.apple.com/guide/calendar/), allowing todo tasks available in menu bar.
 
 <p align="center">
 	<img width="430" src="img/screen1.png">
@@ -38,8 +38,8 @@
 </p>
 
 ## Related App
-* [Ticker Bar](https://github.com/ZhexiongLiu/TickerBar)
+[Ticker Bar](https://github.com/ZhexiongLiu/TickerBar)
 
 ## License
 
-* MIT &copy; [Zhexiong Liu](https://github.com/ZhexiongLiu)
+MIT &copy; [Zhexiong Liu](https://github.com/ZhexiongLiu)
