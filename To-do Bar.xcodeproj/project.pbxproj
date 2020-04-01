@@ -431,6 +431,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"To-do Bar/Preview Content\"";
+				DEVELOPMENT_TEAM = 5TAHPLUH9U;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "To-do Bar/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -452,6 +453,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"To-do Bar/Preview Content\"";
+				DEVELOPMENT_TEAM = 5TAHPLUH9U;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "To-do Bar/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

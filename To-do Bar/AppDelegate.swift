@@ -85,7 +85,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if calendarGrant || remindersGrant {
 
             let timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(fetchItems), userInfo: nil, repeats: true)
-            RunLoop.current.add(timer, forMode: RunLoop.Mode.common)
+            RunLoop.main.add(timer, forMode: RunLoop.Mode.common)
+            
         }
     }
 
@@ -123,14 +124,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @objc func calendarMenu(statusBarMenu: NSMenu) {
 
-        statusBarMenu.addItem(NSMenuItem.separator())
+//        statusBarMenu.addItem(NSMenuItem.separator())
         if calendarGrant {
             statusBarMenu.addItem(
                     withTitle: "Calendar",
                     action: #selector(AppDelegate.OpenCalendar),
                     keyEquivalent: "c")
         }
-        statusBarMenu.addItem(NSMenuItem.separator())
+//        statusBarMenu.addItem(NSMenuItem.separator())
 
         var allEvents: [EKEvent] = []
         let calendars = eventStore.calendars(for: .event)
@@ -217,7 +218,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     withTitle: EventSring,
                     action: #selector(AppDelegate.DoNothingAPP),
                     keyEquivalent: "")
-
         }
     }
 
@@ -228,14 +228,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let textView = NSView(frame: NSRect(x: 0, y: 0, width: 280, height: 25))
         let textField = TextInput()
         textField.frame = NSRect(x: 10, y: 0, width: textView.frame.width - 20, height: textView.frame.height)
-//        textField.becomeFirstResponder()
         textView.addSubview(textField)
+//        textView.becomeFirstResponder()
 
 
         let textFieldInMenutest = NSMenuItem()
         statusBarMenu.addItem(textFieldInMenutest)
         textFieldInMenutest.view = textView
-
 
         self.reminderCount = 0
 
@@ -295,13 +294,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 } else {
                     button.imagePosition = NSControl.ImagePosition.imageOnly
                 }
-
             }
         }
     }
 
     @objc func referenceMenu(statusBarMenu: NSMenu) {
-
+        
         statusBarMenu.addItem(NSMenuItem.separator())
 
         statusBarMenu.addItem(
@@ -315,6 +313,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 keyEquivalent: "q")
     }
 
+    
     @objc func fetchItems() {
 
 
@@ -431,7 +430,8 @@ class TextInput: NSTextField, NSTextFieldDelegate {
         self.font = NSFont.systemFont(ofSize: 14)
         self.cell?.usesSingleLineMode = true
         self.bezelStyle = NSTextField.BezelStyle.roundedBezel
-        _ = self.becomeFirstResponder()
+//        _ = self.becomeFirstResponder()
+        self.window?.makeFirstResponder(self)
     }
 
 
@@ -452,7 +452,10 @@ class TextInput: NSTextField, NSTextFieldDelegate {
 
                     let eventStore = EKEventStore()
                     let reminder = EKReminder(eventStore: eventStore)
+                    let alarm = EKAlarm(absoluteDate: date)
+                    
                     reminder.title = text
+                    reminder.addAlarm(alarm)
                     reminder.dueDateComponents = dateComponentFromNSDate(date: date as NSDate) as DateComponents
                     reminder.calendar = eventStore.defaultCalendarForNewReminders()
                     do {
@@ -476,11 +479,8 @@ class TextInput: NSTextField, NSTextFieldDelegate {
                 }
                 textField.stringValue = ""
             }
-
             return true
         }
-
-
         return false
     }
 
@@ -512,35 +512,10 @@ class TextInput: NSTextField, NSTextFieldDelegate {
 
         newString = newString.replacingOccurrences(of: "  " as String, with: " ")
         newString = newString.trimmingCharacters(in: .whitespacesAndNewlines)
-
+        
+        print([newDateString, newString])
         return [newDateString, newString]
     }
-
-
-    open override func performKeyEquivalent(with event: NSEvent) -> Bool {
-        if event.modifierFlags.isDisjoint(with: .command) {
-            return super.performKeyEquivalent(with: event)
-        }
-        switch event.charactersIgnoringModifiers {
-        case "a":
-            return NSApp.sendAction(#selector(NSText.selectAll(_:)), to: self.window?.firstResponder, from: self)
-        case "c":
-            return NSApp.sendAction(#selector(NSText.copy(_:)), to: self.window?.firstResponder, from: self)
-        case "v":
-            return NSApp.sendAction(#selector(NSText.paste(_:)), to: self.window?.firstResponder, from: self)
-        case "x":
-            return NSApp.sendAction(#selector(NSText.cut(_:)), to: self.window?.firstResponder, from: self)
-        case "z":
-            self.window?.firstResponder?.undoManager?.undo()
-            return true
-        case "Z":
-            self.window?.firstResponder?.undoManager?.redo()
-            return true
-        default:
-            return super.performKeyEquivalent(with: event)
-        }
-    }
-
 }
 
 
@@ -580,59 +555,10 @@ extension Date {
         return Date(timeInterval: seconds, since: self)
     }
 
-    // Convert UTC (or GMT) to local time
     func toLocalTime() -> Date {
         let timezone = TimeZone.current
         let seconds = TimeInterval(timezone.secondsFromGMT(for: self))
         return Date(timeInterval: seconds, since: self)
     }
-
 }
-
-
-extension NSTextField {
-    open override func performKeyEquivalent(with event: NSEvent) -> Bool {
-        if event.modifierFlags.isDisjoint(with: .command) {
-            return super.performKeyEquivalent(with: event)
-        }
-        print("enter")
-
-        switch event.charactersIgnoringModifiers {
-        case "a":
-            print("test")
-            return NSApp.sendAction(#selector(NSText.selectAll(_:)), to: self.window?.firstResponder, from: self)
-        case "c":
-            return NSApp.sendAction(#selector(NSText.copy(_:)), to: self.window?.firstResponder, from: self)
-        case "v":
-            return NSApp.sendAction(#selector(NSText.paste(_:)), to: self.window?.firstResponder, from: self)
-        case "x":
-            return NSApp.sendAction(#selector(NSText.cut(_:)), to: self.window?.firstResponder, from: self)
-        case "z":
-            self.window?.firstResponder?.undoManager?.undo()
-            return true
-        case "Z":
-            self.window?.firstResponder?.undoManager?.redo()
-            return true
-        default:
-            return super.performKeyEquivalent(with: event)
-        }
-    }
-
-    public func customizeCursorColor(_ cursorColor: NSColor) {
-        let fieldEditor = self.window?.fieldEditor(true, for: self) as! NSTextView
-        fieldEditor.insertionPointColor = cursorColor
-    }
-
-    override open func becomeFirstResponder() -> Bool {
-        let success = super.becomeFirstResponder()
-        if success {
-            let textview = self.currentEditor() as? NSTextView
-            textview?.insertionPointColor = NSColor.red
-        }
-        return success
-    }
-}
-
-
-
 
